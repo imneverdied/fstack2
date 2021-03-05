@@ -1,5 +1,7 @@
 <mat-tab-group>
 	<mat-tab label="買入手續費">
+
+		<mat-progress-bar mode="query"></mat-progress-bar>
 		<br />
 		<label>交易手續費%數</label>
 		<input matInput [(ngModel)]="BuyFee" value="0.001" />
@@ -23,6 +25,7 @@
       number:'1.0-2'}}]</label>
 	</mat-tab>
 	<mat-tab label="賣出手續費">
+		<mat-progress-bar mode="indeterminate"></mat-progress-bar>
 		<br />
 		<label>交易手續費%數</label>
 		<input matInput [(ngModel)]="BuyFee" />
@@ -56,6 +59,8 @@
       number:'1.0-2'}}]</label>
 	</mat-tab>
 </mat-tab-group>
+
+
 
 <!-- Copyright 2020 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
