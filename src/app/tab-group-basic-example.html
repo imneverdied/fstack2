@@ -1,26 +1,27 @@
 <mat-tab-group>
 	<mat-tab label="買入手續費">
-
-		<mat-progress-bar mode="query"></mat-progress-bar>
-		<br />
-		<label>交易手續費%數</label>
-		<input matInput [(ngModel)]="BuyFee" value="0.001" />
-		<br />
-		<label>折扣</label>
-		<input matInput [(ngModel)]="Discount" />
-    {{Discount}}
-		<br />
-		<label>交易張數(1000股)</label>
-		<input matInput [(ngModel)]="Stack" />張
-		<br />
-		<label>買入股票單價</label>
-		<input matInput [(ngModel)]="BPrice" />
-		<br />
-		<label>買入手續費 $ </label>
-		<label>[{{(BuyFee*Discount*(Stack*1000)*BPrice)| number:'1.0-2'}}]</label>
-		<br />
-		<label>加總金額 $ </label>
-		<label>
+		<br/>
+		<mat-form-field appearance="legacy">
+			<mat-label>交易手續費%數</mat-label>
+			<input  matInput [(ngModel)]="BuyFee">
+  </mat-form-field>
+			<br/>
+			<mat-form-field appearance="legacy">
+				<mat-label>折扣</mat-label>
+				<input  matInput [(ngModel)]="Discount">
+  </mat-form-field>
+				<br />
+				<label>交易張數(1000股)</label>
+				<input matInput [(ngModel)]="Stack" />張
+				<br />
+				<label>買入股票單價</label>
+				<input matInput [(ngModel)]="BPrice" />
+				<br />
+				<label>買入手續費 $ </label>
+				<label>[{{(BuyFee*Discount*(Stack*1000)*BPrice)| number:'1.0-2'}}]</label>
+				<br />
+				<label>加總金額 $ </label>
+				<label>
       [{{((Stack*1000)*BPrice)+(BuyFee*Discount*(Stack*1000)*BPrice)|
       number:'1.0-2'}}]</label>
 	</mat-tab>
