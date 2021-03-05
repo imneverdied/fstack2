@@ -1,0 +1,62 @@
+<mat-tab-group>
+	<mat-tab label="買入手續費">
+		<br />
+		<label>交易手續費%數</label>
+		<input matInput [(ngModel)]="BuyFee" value="0.001" />
+		<br />
+		<label>折扣</label>
+		<input matInput [(ngModel)]="Discount" />
+    {{Discount}}
+		<br />
+		<label>交易張數(1000股)</label>
+		<input matInput [(ngModel)]="Stack" />張
+		<br />
+		<label>買入股票單價</label>
+		<input matInput [(ngModel)]="BPrice" />
+		<br />
+		<label>買入手續費 $ </label>
+		<label>[{{(BuyFee*Discount*(Stack*1000)*BPrice)| number:'1.0-2'}}]</label>
+		<br />
+		<label>加總金額 $ </label>
+		<label>
+      [{{((Stack*1000)*BPrice)+(BuyFee*Discount*(Stack*1000)*BPrice)|
+      number:'1.0-2'}}]</label>
+	</mat-tab>
+	<mat-tab label="賣出手續費">
+		<br />
+		<label>交易手續費%數</label>
+		<input matInput [(ngModel)]="BuyFee" />
+		<br />
+		<label>折扣</label>
+		<input matInput [(ngModel)]="Discount" />
+		<br />
+		<!-- <label>交易稅 1‰ [{{(tax2*(Stack*1000)*SPrice)}}]</label> -->
+
+		交易稅
+		<mat-button-toggle-group appearance="legacy" [(ngModel)]="tax2" name="fontStyle">
+			<mat-button-toggle value="0.001">1‰</mat-button-toggle>
+			<mat-button-toggle value="0.003">3‰</mat-button-toggle>
+			<mat-button-toggle value="0">0</mat-button-toggle>
+		</mat-button-toggle-group>
+		[{{(tax2*(Stack*1000)*SPrice)}}]
+
+		<br />
+		<label>交易張數(1000股)</label>
+		<input matInput [(ngModel)]="Stack" />張
+		<br />
+		<label>賣出股票單價</label>
+		<input matInput [(ngModel)]="SPrice" />
+		<br />
+		<label>賣出手續費 $</label>
+		<label>[{{(BuyFee*Discount*(Stack*1000)*SPrice)| number:'1.0-2'}}]</label>
+		<br />
+		<label>加總金額 $</label>
+		<label>
+      [{{((Stack*1000)*SPrice)-(BuyFee*Discount*(Stack*1000)*SPrice)-(tax2*(Stack*1000)*SPrice)|
+      number:'1.0-2'}}]</label>
+	</mat-tab>
+</mat-tab-group>
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
