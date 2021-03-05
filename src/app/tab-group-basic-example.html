@@ -1,7 +1,5 @@
 <mat-tab-group>
 	<mat-tab label="買入手續費">
-
-		<mat-progress-bar mode="query"></mat-progress-bar>
 		<br />
 		<label>交易手續費%數</label>
 		<input matInput [(ngModel)]="BuyFee" size="9"/>
@@ -24,7 +22,6 @@
       number:'1.0-2'}}]</label>
 	</mat-tab>
 	<mat-tab label="賣出手續費">
-		<mat-progress-bar mode="indeterminate"></mat-progress-bar>
 		<br />
 		<label>交易手續費%數</label>
 		<input matInput [(ngModel)]="BuyFee" size="9"/>
@@ -35,7 +32,7 @@
 		<!-- <label>交易稅 1‰ [{{(tax2*(Stack*1000)*SPrice)}}]</label> -->
 
 		交易稅
-		<mat-button-toggle-group appearance="legacy" [(ngModel)]="tax2" name="fontStyle">
+		<mat-button-toggle-group appearance="legacy" [(ngModel)]="tax2" name="fontStyle" value="0.001">
 			<mat-button-toggle value="0.001">1‰</mat-button-toggle>
 			<mat-button-toggle value="0.003">3‰</mat-button-toggle>
 			<mat-button-toggle value="0">0</mat-button-toggle>

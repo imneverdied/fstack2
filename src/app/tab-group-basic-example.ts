@@ -17,6 +17,7 @@ export class TabGroupBasicExample {
   SPrice = 0;
   Amount = 0;
   BuyFeeCount = 0;
+  tax2 = 0.001;
 }
 
 export class AppComponent {}
